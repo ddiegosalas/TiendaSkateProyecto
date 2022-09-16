@@ -36,9 +36,23 @@ header{
 }
 
 header div img{
+    margin: 6px;
     width: 70px;
     height: 70px;
-    margin: 6px;
+    animation-name: animacion_logo;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    /*animation-fill-mode: forwards; (Lo deja quieto al final de la animación) */
+}
+
+@keyframes animacion_logo{
+    to {
+        
+    }
+
+    from {
+        transform: rotateY(360deg);
+    }
 }
 
 header div audio{
@@ -53,6 +67,11 @@ header div audio{
     font-weight: bolder;
     border: solid 3px black;
     padding: 5px;
+}
+
+#ingresar:hover{
+    transform: scale(1.2);
+    transition: transform 2s;
 }
 
 #ingresar a{
@@ -75,7 +94,7 @@ main{
 main nav{
     width: 90%;
     position: relative;
-    left: 5px;
+    left: 1px;
 }
 
 main a{
@@ -395,13 +414,18 @@ main a{
     justify-content: space-around;
 }
 
+.movimiento:hover{
+    transform: translateX(50px) scale(1.1);
+    transition: transform 2s;
+}
+
 #menuPrincipal li{
     margin-bottom: 45px;
+    list-style-type: none;
 }
 
 #menuPrincipal a{
     text-decoration: none;
-    list-style-type: none;
     font-size: 23px;
     font-weight: bold;
     margin: 5px;
