@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IF=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Boostrap/boostrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Primitive Skateshop bootstrap</title>
+</head>
+
+<body id="body">
+    
+    <header class="container-fluid">
+        <div class="row bg-dark container-fluid" id="header">
+            <div class="col-2"></div>
+            <img src="/assets/Imagenes/LogoPrimitive.png" alt="#" class="col-1" width="1" height="80">
+            <div class="col-2"></div>
+            <div class="col-4"><audio src="/assets/Audio/Musica.wav" controls loop></audio></div>
+            <div class="col-1"></div>
+            <button type="button" class="col-2 h-50 btn btn-outline-light">INGRESAR</button>
+        </div>
+    </header>
+
+    <main class="container-fluid">
+        <div class="row" id="main">
+            <ul class="row-sm-12 col-md-12 col-lg-2 col-xl-2 col-xll-2 align-items-center justify-content-center nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">SKATE</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">REMERAS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">BUZOS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">ACCESORIOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Boostrap/index.html">INICIO</a>
+                  </li>
+            </ul>
+
+            <div id="carouselExampleIndicators" class="row-sm-0 col-md-0 col-lg-10 col-xl-10 col-xll-10 carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/assets/Imagenes/skate.png" class="d-block" alt="">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/assets/Imagenes/buzos.jpg" class="d-block" alt="">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/assets/Imagenes/remeras.png" class="d-block" alt="">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/assets/Imagenes/accesorios.jpg" class="d-block" alt="">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid">
+        <div class="row h-50" id="footer">
+            <div class="col-2"></div>
+            <img src="/assets/Imagenes/LogoPrimitive.png" alt="#" class="col-1" height="80">
+            <div class="col-2"></div>
+            <nav class="col justify-content-center align-items-center text-center">
+                <ul class="col nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link disabled" id="tituloListaFooter">REDES SOCIALES:</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Instagram</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Youtube</a>
+                     </li>
+                </ul>
+            </nav>
+            <nav class="col justify-content-center align-items-center text-center">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link disabled" id="tituloListaFooter">INFORMACION:</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Locales</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Conocenos</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
