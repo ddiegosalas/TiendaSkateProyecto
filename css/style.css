@@ -1,585 +1,647 @@
+@charset "UTF-8";
+/*
+@import "./_evento.scss"
+@import "./_variables.scss"
+
+*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-a{
-    text-decoration: none;
-    color: whitesmoke;
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, black, rgb(59, 59, 52), black);
+  overflow: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0.3fr 1em 1.5fr 1em 1.5fr 1em 0.3fr;
+  grid-template-rows: 0.3fr 1.5fr 1.5fr 0.3fr;
+  -ms-grid-columns: 0.5fr 1em 1fr 1em 1fr 1em 1fr;
+  grid-template-columns: 0.5fr repeat(3, 1fr);
+      grid-template-areas: "header header header header" "nav main main main" "nav main main main" "footer footer footer footer";
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
 }
 
-/*--------------- B O D Y -------------------*/
-
-body{
-    width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(to bottom, black, rgb(59, 59, 52),black);
-    overflow: auto;
-    display: grid;
-    grid-template-rows: .3fr 1.5fr 1.5fr .3fr;
-    grid-template-columns: .5fr repeat(3, 1fr);
-    grid-template-areas: "header header header header" /*EL PUNTO HACE ESPACIO VACIO*/
-                         "nav main main main"
-                         "nav main main main"
-                         "footer footer footer footer";
-    grid-column-gap: 1em;
-    grid-row-gap: 1em;
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: header;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+header div img {
+  margin: 6px;
+  width: 70px;
+  height: 70px;
+  -webkit-animation-name: animacion_logo;
+          animation-name: animacion_logo;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  /*animation-fill-mode: forwards; (Lo deja quieto al final de la animación) */
+}
+@-webkit-keyframes animacion_logo {
+  from {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+@keyframes animacion_logo {
+  from {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+header div audio {
+  margin-top: 10px;
+}
+header div a {
+  text-decoration: none;
+  color: black;
 }
 
-/*--------------- H E A D E R -------------------*/
-
-header{
-    grid-area: header;
-    display: flex;
-    justify-content: space-around;
+#ingresar {
+  background-color: rgb(218, 218, 218);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 28px;
+  font-weight: bolder;
+  border: solid 3px black;
+  padding: 5px;
+}
+#ingresar:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
 }
 
-header div img{
-    margin: 6px;
-    width: 70px;
-    height: 70px;
-    animation-name: animacion_logo;
-    animation-duration: 6s;
-    animation-iteration-count: infinite;
-    /*animation-fill-mode: forwards; (Lo deja quieto al final de la animación) */
+main {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 5;
+  grid-area: main;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow-y: scroll;
+  position: relative;
+  top: 20px;
+}
+main nav {
+  width: 90%;
+  position: relative;
+  left: 1px;
+  list-style-type: none;
+}
+main nav a {
+  text-decoration: none;
+  position: absolute;
+  width: 90%;
+  height: 85px;
+  color: black;
+  left: 48px;
+  top: 10px;
+  font-weight: bolder;
+  font-size: 20px;
 }
 
-@keyframes animacion_logo{
-    to {
-        
-    }
-
-    from {
-        transform: rotateY(360deg);
-    }
+#skateshop {
+  background-image: url(../assets/Imagenes/Shop.jpg);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  border: 2px solid rgb(0, 0, 0);
+  height: 110px;
 }
 
-header div audio{
-    margin-top: 10px;
+#team {
+  background-image: url(../assets/Imagenes/Team.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid rgb(0, 0, 0);
+  height: 110px;
 }
 
-#ingresar{
-    background-color: rgb(218, 218, 218);
-    width: fit-content;
-    height: fit-content;
-    margin-top: 28px;
-    font-weight: bolder;
-    border: solid 3px black;
-    padding: 5px;
+#eventos {
+  background-image: url(../assets/Imagenes/Eventos.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid rgb(0, 0, 0);
+  height: 110px;
 }
 
-#ingresar:hover{
-    transform: scale(1.2);
-    transition: transform 2s;
+#contacto {
+  background-image: url(../assets/Imagenes/contacto.jpg);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  border: 2px solid rgb(0, 0, 0);
+  height: 110px;
 }
 
-#ingresar a{
-    color: black;   
+#menuPrincipal {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: nav;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+#menuPrincipal ul li {
+  margin-bottom: 45px;
+  list-style-type: none;
+}
+#menuPrincipal ul li a {
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: bold;
+  margin: 5px;
+  padding: 8px;
+  border: solid black;
+  background-color: rgb(218, 218, 218);
+  color: black;
 }
 
-/*--------------- M A I N -------------------*/
-
-main{
-    grid-area: main;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: row;
-    overflow-y: scroll;
-    position: relative;
-    top: 20px;
+.movimiento:hover {
+  -webkit-transform: translateX(50px) scale(1.1);
+          transform: translateX(50px) scale(1.1);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
 }
 
-main nav{
-    width: 90%;
-    position: relative;
-    left: 1px;
+footer {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: footer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+footer div img {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+}
+footer nav {
+  margin: 10px;
+}
+footer nav ul li {
+  list-style-type: none;
+  color: whitesmoke;
+}
+footer nav ul a {
+  text-decoration: none;
+  color: whitesmoke;
 }
 
-main a{
-    position: absolute;
-    width: 90%;
-    height: 85px;
-    color: black;
-    left: 48px;
-    top: 10px;
-    font-weight: bolder;
-    font-size: 20px;
+#mainShop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: relative;
+  top: 10px;
+}
+#mainShop nav {
+  height: 220px;
+  width: 280px;
+  position: relative;
+  top: 50px;
+}
+#mainShop nav a {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  color: black;
+  left: 20px;
+  top: 10px;
+  font-weight: bolder;
+  font-size: 20px;
 }
 
-#skateshop{
-    background-image: url(../assets/Imagenes/Shop.jpg);
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    border: 2px solid rgb(0, 0, 0);
-    height: 110px;
+#mainSkate {
+  background-image: url(../assets/Imagenes/skate.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid rgb(0, 0, 0);
 }
 
-#team{
-    background-image: url(../assets/Imagenes/Team.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 2px solid rgb(0, 0, 0);;
-    height: 110px;
+#mainRemeras {
+  background-image: url(../assets/Imagenes/remeras.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid rgb(0, 0, 0);
 }
 
-#eventos{
-    background-image: url(../assets/Imagenes/Eventos.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 2px solid rgb(0, 0, 0);
-    height: 110px;
+#mainBuzos {
+  background-image: url(../assets/Imagenes/buzos.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid rgb(0, 0, 0);
 }
 
-#contacto{
-    background-image: url(../assets/Imagenes/contacto.jpg);
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    border: 2px solid rgb(0, 0, 0);
-    height: 110px;
+#mainAccesorios {
+  background-image: url(../assets/Imagenes/accesorios.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid rgb(0, 0, 0);
 }
 
-    /*align-self: flex-start;*/
-
-/*--------------- M A I N  S H O P-------------------*/
-
-#mainShop{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-    position: relative;
-    top: 10px;
+#mainTeam {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 5;
+  grid-area: main;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow-y: scroll;
+  position: relative;
+  top: 20px;
+}
+#mainTeam nav {
+  width: 90%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+}
+#mainTeam nav ul li {
+  list-style-type: circle;
+  color: whitesmoke;
+  padding: 3px;
+}
+#mainTeam nav ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: whitesmoke;
+}
+#mainTeam div {
+  width: 95%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 50px;
 }
 
-#mainShop nav{
-    height: 250px;
-    width: 300px;
-    position: relative;
-    top: 5px;
+.filipeMota img {
+  height: 180px;
+  width: 200px;
+  padding: 10px;
+  position: relative;
+  left: 40%;
+}
+.filipeMota h2 {
+  color: lightgray;
+  width: 80%;
+  padding: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bolder;
+  position: relative;
+  top: 15px;
+  left: 10%;
+}
+.filipeMota p {
+  padding: 30px;
+  position: relative;
+  left: 10%;
+  width: 80%;
+  font-size: 20px;
+  color: whitesmoke;
+}
+.filipeMota iframe {
+  position: relative;
+  padding: 5px;
+  left: 25%;
 }
 
-#mainShop nav a{
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    color: black;
-    left: 20px;
-    top: 10px;
-    font-weight: bolder;
-    font-size: 20px;
+.milesSilva img {
+  height: 180px;
+  width: 200px;
+  padding: 10px;
+  position: relative;
+  left: 40%;
+}
+.milesSilva h2 {
+  color: lightgray;
+  width: 80%;
+  padding: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bolder;
+  position: relative;
+  left: 10%;
+}
+.milesSilva p {
+  padding: 30px;
+  position: relative;
+  left: 10%;
+  width: 80%;
+  font-size: 20px;
+  color: whitesmoke;
+}
+.milesSilva iframe {
+  padding: 5px;
+  position: relative;
+  left: 25%;
 }
 
-#mainSkate{
-    background-image: url(../assets/Imagenes/skate.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 2px solid rgb(0, 0, 0);
+#mainContacto {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 5;
+  grid-area: main;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
-
-#mainRemeras{
-    background-image: url(../assets/Imagenes/remeras.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 2px solid rgb(0, 0, 0);
-}
-
-#mainBuzos{
-    background-image: url(../assets/Imagenes/buzos.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 2px solid rgb(0, 0, 0);
-}
-
-#mainAccesorios{
-    background-image: url(../assets/Imagenes/accesorios.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 2px solid rgb(0, 0, 0);
-}
-
-/*--------------- M A I N  T E A M-------------------*/
-
-#mainTeam{
-    grid-area: main;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: row;
-    overflow-y: scroll;
-    position: relative;
-    top: 20px;
-}
-
-#mainTeam div{
-    width: 95%;
-    height: fit-content;
-    padding: 50px;
-}
-
-.filipeMota img{
-    height: 180px;
-    width: 200px;
-    padding: 10px;
-    position: relative;
-    left: 40%;
-}
-
-.tituloMota{
-    color: lightgray;
-    width: 80%;
-    padding: 10px;
-    height: fit-content;
-    text-align: center;
-    font-size: 35px;
-    font-weight: bolder;
-    position: relative;
-    top: 15px;
-    left: 10%;
-}
-
-.filipeMota p{
-    padding: 30px;
-    position: relative;
-    left: 10%;
-    width: 80%;
-    font-size: 20px;
-    color: whitesmoke;
-}
-
-.filipeMota iframe{
-    position: relative;
-    padding: 5px;
-    left: 25%;
-}
-
-.milesSilva img{
-    height: 180px;
-    width: 200px;
-    padding: 10px;
-    position: relative;
-    left: 40%;
-}
-
-.tituloSilva{
-    color: lightgray;
-    width: 80%;
-    padding: 10px;
-    height: fit-content;
-    text-align: center;
-    font-size: 35px;
-    font-weight: bolder;
-    position: relative;
-    left: 10%;
-}
-
-.milesSilva p{
-    padding: 30px;
-    position: relative;
-    left: 10%;
-    width: 80%;
-    font-size: 20px;
-    color: whitesmoke;
-}
-
-.milesSilva iframe{
-    padding: 5px;
-    position: relative;
-    left: 25%;
-}
-
-
-/*--------------- M A I N  E V E N T O S-------------------*/
-
-#mainEventos{
-    grid-area: main;
-    display: flex;
-    justify-content: space-evenly;
-    flex-flow: row wrap;
-    overflow-y: scroll;
-    position: relative;
-    top: 20px;
-}
-
-#mainEventos div{
-    width: 95%;
-    height: fit-content;
-    padding: 35px;
-}
-
-.villaAdelina img{
-    height: 300px;
-    width: 450px;
-    padding: 10px;
-    position: relative;
-    left: 30%;  
-}
-
-.tituloVA{
-    color: lightgray;
-    width: 80%;
-    padding: 10px;
-    height: fit-content;
-    text-align: center;
-    font-size: 35px;
-    font-weight: bolder;
-    position: relative;
-    left: 10%;
-}
-
-.villaAdelina p{
-    padding: 20px;
-    position: relative;
-    left: 10%;
-    width: 80%;
-    font-size: 20px;
-    color: whitesmoke;
-}
-
-.sanFernando img{
-    height: 300px;
-    width: 450px;
-    padding: 10px;
-    position: relative;
-    left: 30%;
-}
-
-.tituloSF{
-    color: lightgray;
-    width: 80%;
-    padding: 10px;
-    height: fit-content;
-    text-align: center;
-    font-size: 35px;
-    font-weight: bolder;
-    position: relative;
-    left: 10%;
-}
-
-.sanFernando p{
-    padding: 10px;
-    position: relative;
-    left: 10%;
-    width: 80%;
-    font-size: 20px;
-    color: whitesmoke;
-}
-
-
-/*--------------- M A I N  C O N T A C T O-------------------*/
-
-#mainContacto{
-    grid-area: main;
-    display: flex;
-    flex-flow: row wrap;
-}
-
-#mainContacto div{
-    height: 36%;
-    width: 90%;
-    padding: 5px;
-    position: relative;
+#mainContacto div {
+  height: 36%;
+  width: 90%;
+  padding: 5px;
+  position: relative;
 }
 
 .estiloSecciones {
-    color: aliceblue;
-    font-size: 27px;
-    padding: 5px;
-    position: relative;
-    left: 10px;
+  color: aliceblue;
+  font-size: 27px;
+  padding: 5px;
+  position: relative;
+  left: 10px;
 }
 
 .estiloSecciones--modificado {
-    color: aliceblue;
-    font-size: 21px;
-    position: relative;
-    left: 5px;
+  color: aliceblue;
+  font-size: 21px;
+  position: relative;
+  left: 5px;
 }
 
-/*--------------- M E N U -------------------*/
+@media only screen and (max-width: 1200px) {
+  body {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(rgb(143, 83, 211)));
+    background-image: linear-gradient(to bottom, black, rgb(143, 83, 211));
+    -ms-grid-rows: 0.3fr 2fr 2fr 0.5fr;
+    grid-template-rows: 0.3fr 2fr 2fr 0.5fr;
+    -ms-grid-columns: 1fr (0.9fr)[3];
+    grid-template-columns: 1fr repeat(3, 0.9fr);
+        grid-template-areas: "header header header header" "nav main main main" "nav main main main" "footer footer footer footer";
+  }
 
-#menuPrincipal{
-    grid-area: nav;
+  .milesSilva iframe {
+    width: 490px;
+    height: 300px;
+    left: 10%;
+  }
+
+  .filipeMota iframe {
+    width: 490px;
+    height: 300px;
+    left: 10%;
+  }
+
+  .sanFernando img {
+    left: 10%;
+  }
+
+  .villaAdelina img {
+    left: 10%;
+  }
+  header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+  }
+  main {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+  }
+  #menuPrincipal {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+  }
+  footer {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+  }
+  #mainTeam {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+  }
+  #mainContacto {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+  }
+}
+@media only screen and (max-width: 768px) {
+  body {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(rgb(83, 211, 115)));
+    background-image: linear-gradient(to bottom, black, rgb(83, 211, 115));
+  }
+
+  #mainShop nav {
+    top: 5px;
+  }
+
+  .milesSilva iframe {
+    width: 330px;
+    height: 200px;
+    left: 10%;
+  }
+
+  .filipeMota iframe {
+    width: 330px;
+    height: 200px;
+    left: 10%;
+  }
+
+  .sanFernando img {
+    width: 400px;
+    height: 250px;
+    left: 10%;
+  }
+
+  .villaAdelina img {
+    width: 400px;
+    height: 250px;
+    left: 10%;
+  }
+}
+@media only screen and (max-width: 468px) {
+  body {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(rgb(211, 83, 183)));
+    background-image: linear-gradient(to bottom, black, rgb(211, 83, 183));
+    -ms-grid-rows: 0.2fr 0.3fr 1fr 0.2fr;
+    grid-template-rows: 0.2fr 0.3fr 1fr 0.2fr;
+    -ms-grid-columns: 0.5fr 1em 1fr 1em 1fr;
+    grid-template-columns: 0.5fr repeat(2, 1fr);
+        grid-template-areas: "header header header" "nav nav nav" "main main main" "footer footer footer";
+    grid-column-gap: 1em;
+  }
+
+  header div audio {
+    display: none;
+  }
+
+  #menuPrincipal ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column wrap;
-    justify-content: space-around;
-}
-
-.movimiento:hover{
-    transform: translateX(50px) scale(1.1);
-    transition: transform 2s;
-}
-
-#menuPrincipal li{
-    margin-bottom: 45px;
-    list-style-type: none;
-}
-
-#menuPrincipal a{
-    text-decoration: none;
-    font-size: 23px;
-    font-weight: bold;
-    margin: 5px;
-    padding: 8px;
-    border: solid black;
-    background-color: rgb(218, 218, 218);
-    color: black;
-}
-
-/*--------------- FOOTER -------------------*/
-
-footer{
-    grid-area: footer;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-footer div img{
-    width: 60px;
-    height: 60px;
-    margin: 10px;
-}
-
-footer nav{
-    margin: 10px;
-}
-
-footer li{
-    list-style-type: none;
-    color: whitesmoke;
-}
-
-
-/*--------------- M E D I A  Q U E R I E S -------------------*/
-
-@media only screen and (max-width: 1200px){
-    body{
-        background-image: linear-gradient(to bottom, black, rgb(143, 83, 211));
-        grid-template-rows: .3fr 2fr 2fr .5fr;
-        grid-template-columns: 1fr repeat(3, .9fr);
-        grid-template-areas: "header header header header" /*EL PUNTO HACE ESPACIO VACIO*/
-                            "nav main main main"
-                            "nav main main main"
-                            "footer footer footer footer";
-    }
-    
-    .milesSilva iframe{
-        width: 490px;
-        height: 300px;
-        left: 10%;
-    }
-
-    .filipeMota iframe{
-        width: 490px;
-        height: 300px;
-        left: 10%;
-    }
-
-    .sanFernando img{
-        left: 10%;
-    }
-
-    .villaAdelina img{
-        left: 10%;
-    }
-
-}
-
-@media only screen and (max-width: 768px){
-    body{
-        background-image: linear-gradient(to bottom, black, rgb(83, 211, 115));
-    }
-
-    #mainShop nav{
-        top: 5px;
-    }
-
-    .milesSilva iframe{
-        width: 330px;
-        height: 200px;
-        left: 10%;
-    }
-
-    .filipeMota iframe{
-        width: 330px;
-        height: 200px;
-        left: 10%;
-    }
-
-    .sanFernando img{
-        width: 400px;
-        height: 250px;
-        left: 10%;
-    }
-
-    .villaAdelina img{
-        width: 400px;
-        height: 250px;
-        left: 10%;
-    }
-
-}
-
-@media only screen and (max-width: 468px){
-    body{
-        background-image: linear-gradient(to bottom, black, rgb(211, 83, 183));
-        grid-template-rows: .2fr .3fr 1fr .2fr;
-        grid-template-columns: .5fr repeat(2, 1fr);
-        grid-template-areas: "header header header" /*EL PUNTO HACE ESPACIO VACIO*/
-                             "nav nav nav"
-                             "main main main"
-                             "footer footer footer";
-        grid-column-gap: 1em;
-    }
-
-    header div audio{
-        display: none;
-    }
-    
-    
-    #menuPrincipal ul{
-        display: flex;
+    -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
         justify-content: space-around;
-    }
+  }
 
-    #menuPrincipal li{
-        list-style: none;
-        margin-bottom: 30px;
-    }
+  #menuPrincipal li {
+    list-style: none;
+    margin-bottom: 30px;
+  }
 
-    .milesSilva iframe{
-        width: 250px;
-        height: 150px;
-        left: 10%;
-    }
+  .milesSilva iframe {
+    width: 250px;
+    height: 150px;
+    left: 10%;
+  }
 
-    .filipeMota iframe{
-        width: 250px;
-        height: 150px;
-        left: 10%;
-    }
+  .filipeMota iframe {
+    width: 250px;
+    height: 150px;
+    left: 10%;
+  }
 
-    .sanFernando img{
-        width: 300px;
-        height: 180px;
-        left: 2%;
-    }
+  .sanFernando img {
+    width: 300px;
+    height: 180px;
+    left: 2%;
+  }
 
-    .villaAdelina img{
-        width: 300px;
-        height: 180px;
-        left: 2%;
-    }
+  .villaAdelina img {
+    width: 300px;
+    height: 180px;
+    left: 2%;
+  }
+  header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  main {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  #menuPrincipal {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  footer {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  #mainTeam {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
+  #mainContacto {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
 }

@@ -1,0 +1,56 @@
+#mainShop{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: relative;
+    top: 10px;
+    nav{
+        height: 220px;
+        width: 280px;
+        position: relative;
+        top: 50px;
+        a{
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            color: black;
+            left: 20px;
+            top: 10px;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+    }
+}
+
+#mainSkate{
+    background-image: url(../assets/Imagenes/skate.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+#mainRemeras{
+    background-image: url(../assets/Imagenes/remeras.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+#mainBuzos{
+    background-image: url(../assets/Imagenes/buzos.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+#mainAccesorios{
+    background-image: url(../assets/Imagenes/accesorios.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid rgb(0, 0, 0);
+}
