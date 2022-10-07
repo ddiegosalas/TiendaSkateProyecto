@@ -1,24 +1,19 @@
 #mainTeam{
-    grid-area: main;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-direction: row;
-    overflow-y: scroll;
+    @include flexbox(column, space-evenly, center, column wrap);
     position: relative;
-    top: 20px;
+    top: 30px;
     nav{
-        width: 90%;
+        width: 70%;
         height: fit-content;
-        padding: 10px;
+        padding: 5px;
         ul{
             li{
                 list-style-type: circle;
-                color: whitesmoke;
+                color: rgb(194, 194, 194);
                 padding: 3px;
                 a{
                     text-decoration: none;
-                    font-size: 20px;
+                    font-size: 25px;
                     color: whitesmoke;
                 }
             }

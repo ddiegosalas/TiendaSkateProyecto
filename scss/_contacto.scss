@@ -1,26 +1,36 @@
 #mainContacto{
-    grid-area: main;
-    display: flex;
-    flex-flow: row wrap;
+    @include flexbox(row, space-around, center, row wrap);
+    position: relative;
+    top: 5px;
     div{
-        height: 36%;
-        width: 90%;
-        padding: 5px;
-        position: relative;
+        @include flexbox(row, space-around, center, row wrap);
+        height: fit-content;
+        width: 80vw;
+        padding: 20px;
+        form{
+            fieldset{
+                legend{
+                    padding: 20px;
+                }
+                div{
+                    width: fit-content;
+                    height: fit-content;
+                    padding: 10px;
+                }
+            }
+        }
     }
 }
 
 .estiloSecciones {
     color: aliceblue;
-    font-size: 27px;
-    padding: 5px;
+    font-size: 26px;
+    padding: 6px;
     position: relative;
-    left: 10px;
+    left: 5px;
 }
 
 .estiloSecciones--modificado {
-    color: aliceblue;
-    font-size: 21px;
-    position: relative;
-    left: 5px;
+    @extend .estiloSecciones;
+    font-size: 30px;
 }

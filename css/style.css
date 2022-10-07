@@ -1,9 +1,15 @@
 @charset "UTF-8";
 /*
-@import "./_evento.scss"
 @import "./_variables.scss"
-
+@import "./each";
 */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,17 +20,35 @@
 body {
   width: 100vw;
   height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(rgb(59, 59, 52)), to(black));
   background-image: linear-gradient(to bottom, black, rgb(59, 59, 52), black);
-  overflow: auto;
+  overflow: scroll;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 0.3fr 1em 1.5fr 1em 1.5fr 1em 0.3fr;
+  -ms-grid-rows: 0.3fr 0.5em 1.5fr 0.5em 1.5fr 0.5em 0.3fr;
   grid-template-rows: 0.3fr 1.5fr 1.5fr 0.3fr;
   -ms-grid-columns: 0.5fr 1em 1fr 1em 1fr 1em 1fr;
   grid-template-columns: 0.5fr repeat(3, 1fr);
       grid-template-areas: "header header header header" "nav main main main" "nav main main main" "footer footer footer footer";
   grid-column-gap: 1em;
-  grid-row-gap: 1em;
+  grid-row-gap: 0.5em;
+}
+
+#segundoBody {
+  width: 100vw;
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(rgb(59, 59, 52)), to(black));
+  background-image: linear-gradient(to bottom, black, rgb(59, 59, 52), black);
+  overflow: scroll;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 0.3fr 0.5em 0.5fr 0.5em 2fr 0.5em 0.3fr;
+  grid-template-rows: 0.3fr 0.5fr 2fr 0.3fr;
+  -ms-grid-columns: 0.5fr 1em 1fr 1em 1fr 1em 1fr;
+  grid-template-columns: 0.5fr repeat(3, 1fr);
+      grid-template-areas: "header header header header" "nav nav nav nav" "main main main main" "footer footer footer footer";
+  grid-column-gap: 1em;
+  grid-row-gap: 0.5em;
 }
 
 header {
@@ -35,8 +59,23 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+}
+
+#segundoBody > header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
 }
 header div img {
   margin: 6px;
@@ -101,18 +140,27 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  overflow-y: scroll;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
   position: relative;
   top: 20px;
+}
+
+#segundoBody > main {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
 }
 main nav {
   width: 90%;
@@ -178,14 +226,34 @@ main nav a {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+}
+
+#segundoBody > #menuPrincipal {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
 }
 #menuPrincipal ul li {
   margin-bottom: 45px;
   list-style-type: none;
+}
+#menuPrincipal ul li:hover {
+  -webkit-transform: translateX(10px) scale(1.1);
+          transform: translateX(10px) scale(1.1);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
 }
 #menuPrincipal ul li a {
   text-decoration: none;
@@ -198,13 +266,72 @@ main nav a {
   color: black;
 }
 
-.movimiento:hover {
-  -webkit-transform: translateX(50px) scale(1.1);
-          transform: translateX(50px) scale(1.1);
+#menuPrincipalDos {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: nav;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+}
+
+#segundoBody > #menuPrincipalDos {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+}
+#menuPrincipalDos ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+}
+#menuPrincipalDos ul li {
+  list-style-type: none;
+  margin-right: 20px;
+}
+#menuPrincipalDos ul li:hover {
+  -webkit-transform: translateY(10px) translateX(10px) scale(1.1);
+          transform: translateY(10px) translateX(10px) scale(1.1);
   -webkit-transition: -webkit-transform 2s;
   transition: -webkit-transform 2s;
   transition: transform 2s;
   transition: transform 2s, -webkit-transform 2s;
+}
+#menuPrincipalDos ul li a {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 5px;
+  padding: 4px;
+  border: solid black;
+  background-color: rgb(218, 218, 218);
+  color: black;
 }
 
 footer {
@@ -215,10 +342,23 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+}
+
+#segundoBody > footer {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
 }
 footer div img {
   width: 60px;
@@ -241,8 +381,6 @@ footer nav ul a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -250,14 +388,18 @@ footer nav ul a {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
   position: relative;
-  top: 10px;
+  top: 5px;
 }
 #mainShop nav {
   height: 220px;
   width: 280px;
   position: relative;
-  top: 50px;
 }
 #mainShop nav a {
   position: absolute;
@@ -303,42 +445,39 @@ footer nav ul a {
 }
 
 #mainTeam {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 3;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 5;
-  grid-area: main;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  overflow-y: scroll;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
   position: relative;
-  top: 20px;
+  top: 30px;
 }
 #mainTeam nav {
-  width: 90%;
+  width: 70%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 10px;
+  padding: 5px;
 }
 #mainTeam nav ul li {
   list-style-type: circle;
-  color: whitesmoke;
+  color: rgb(194, 194, 194);
   padding: 3px;
 }
 #mainTeam nav ul li a {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 25px;
   color: whitesmoke;
 }
 #mainTeam div {
@@ -418,46 +557,175 @@ footer nav ul a {
   left: 25%;
 }
 
+#mainEventos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  position: relative;
+  top: 5px;
+}
+#mainEventos nav {
+  width: 70%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+}
+#mainEventos nav ul li {
+  list-style-type: circle;
+  color: rgb(194, 194, 194);
+  padding: 3px;
+}
+#mainEventos nav ul li a {
+  text-decoration: none;
+  font-size: 25px;
+  color: whitesmoke;
+}
+#mainEventos div {
+  width: 95%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 50px;
+}
+
+.villaAdelina img {
+  height: 300px;
+  width: 450px;
+  padding: 10px;
+  position: relative;
+  left: 30%;
+}
+.villaAdelina h2 {
+  color: lightgray;
+  width: 80%;
+  padding: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bolder;
+  position: relative;
+  left: 10%;
+}
+.villaAdelina p {
+  padding: 20px;
+  position: relative;
+  left: 10%;
+  width: 80%;
+  font-size: 20px;
+  color: whitesmoke;
+}
+
+.sanFernando img {
+  height: 300px;
+  width: 450px;
+  padding: 10px;
+  position: relative;
+  left: 30%;
+}
+.sanFernando h2 {
+  color: lightgray;
+  width: 80%;
+  padding: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bolder;
+  position: relative;
+  left: 10%;
+}
+.sanFernando p {
+  padding: 20px;
+  position: relative;
+  left: 10%;
+  width: 80%;
+  font-size: 20px;
+  color: whitesmoke;
+}
+
 #mainContacto {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 3;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 5;
-  grid-area: main;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  position: relative;
+  top: 5px;
 }
 #mainContacto div {
-  height: 36%;
-  width: 90%;
-  padding: 5px;
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 80vw;
+  padding: 20px;
+}
+#mainContacto div form fieldset legend {
+  padding: 20px;
+}
+#mainContacto div form fieldset div {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
 }
 
-.estiloSecciones {
+.estiloSecciones, .estiloSecciones--modificado {
   color: aliceblue;
-  font-size: 27px;
-  padding: 5px;
-  position: relative;
-  left: 10px;
-}
-
-.estiloSecciones--modificado {
-  color: aliceblue;
-  font-size: 21px;
+  font-size: 26px;
+  padding: 6px;
   position: relative;
   left: 5px;
 }
 
+.estiloSecciones--modificado {
+  font-size: 30px;
+}
+
 @media only screen and (max-width: 1200px) {
   body {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(rgb(143, 83, 211)));
-    background-image: linear-gradient(to bottom, black, rgb(143, 83, 211));
+    /*background-image: linear-gradient(to bottom, black, rgb(143, 83, 211));*/
     -ms-grid-rows: 0.3fr 2fr 2fr 0.5fr;
     grid-template-rows: 0.3fr 2fr 2fr 0.5fr;
     -ms-grid-columns: 1fr (0.9fr)[3];
@@ -499,29 +767,23 @@ footer nav ul a {
     -ms-grid-row: 2;
     -ms-grid-row-span: 2;
     -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+  #menuPrincipalDos {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
   }
   footer {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     -ms-grid-column-span: 4;
   }
-  #mainTeam {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 2;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 3;
-  }
-  #mainContacto {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 2;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 3;
-  }
 }
 @media only screen and (max-width: 768px) {
   body {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(rgb(83, 211, 115)));
-    background-image: linear-gradient(to bottom, black, rgb(83, 211, 115));
+    /*background-image: linear-gradient(to bottom, black, rgb(83, 211, 115));*/
   }
 
   #mainShop nav {
@@ -554,8 +816,7 @@ footer nav ul a {
 }
 @media only screen and (max-width: 468px) {
   body {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(rgb(211, 83, 183)));
-    background-image: linear-gradient(to bottom, black, rgb(211, 83, 183));
+    /*background-image: linear-gradient(to bottom, black, rgb(211, 83, 183));*/
     -ms-grid-rows: 0.2fr 0.3fr 1fr 0.2fr;
     grid-template-rows: 0.2fr 0.3fr 1fr 0.2fr;
     -ms-grid-columns: 0.5fr 1em 1fr 1em 1fr;
@@ -627,20 +888,14 @@ footer nav ul a {
     -ms-grid-column: 1;
     -ms-grid-column-span: 5;
   }
+  #menuPrincipalDos {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+  }
   footer {
     -ms-grid-row: 4;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 5;
-  }
-  #mainTeam {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 5;
-  }
-  #mainContacto {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 5;
   }

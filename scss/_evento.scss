@@ -1,0 +1,35 @@
+#mainEventos{
+    @include flexbox(column, space-evenly, center, column wrap);
+    position: relative;
+    top: 5px;
+    nav{
+        width: 70%;
+        height: fit-content;
+        padding: 10px;
+        ul{
+            li{
+                list-style-type: circle;
+                color: rgb(194, 194, 194);
+                padding: 3px;
+                a{
+                    text-decoration: none;
+                    font-size: 25px;
+                    color: whitesmoke;
+                }
+            }
+        }
+    }
+    div{
+        width: 95%;
+        height: fit-content;
+        padding: 50px;
+    }
+}
+
+.villaAdelina{
+    @include seccionEvento;
+}
+
+.sanFernando{
+    @include seccionEvento;
+}

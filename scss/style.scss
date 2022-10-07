@@ -1,10 +1,21 @@
 /*
-@import "./_evento.scss"
 @import "./_variables.scss"
-
+@import "./each";
 */
-@import "./_index.scss";
-@import "./_shop.scss";
-@import "./_team.scss";
-@import "./_contacto.scss";
-@import "./_mediaQueries.scss";
+
+@import "./mixins";
+@import "./variables";
+
+*{
+    @include reset;
+}
+
+@import "./index";
+@import "./shop";
+@import "./team";
+@import "./evento";
+@import "./contacto";
+
+@include media-query(desktop);
+@include media-query(tablet);
+@include media-query(mobile);

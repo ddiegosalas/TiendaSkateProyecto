@@ -1,0 +1,171 @@
+@mixin reset {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin flexbox($orientacion, $justify, $aling, $flexflow){
+    display: flex;
+    flex-direction: $orientacion;
+    justify-content: $justify;
+    align-items: $aling;
+    flex-flow: $flexflow;
+}
+
+@mixin seccionEvento {
+    img{
+        height: 300px;
+        width: 450px;
+        padding: 10px;
+        position: relative;
+        left: 30%;  
+    }
+    h2{
+        color: lightgray;
+        width: 80%;
+        padding: 10px;
+        height: fit-content;
+        text-align: center;
+        font-size: 35px;
+        font-weight: bolder;
+        position: relative;
+        left: 10%;
+    }
+    p{
+        padding: 20px;
+        position: relative;
+        left: 10%;
+        width: 80%;
+        font-size: 20px;
+        color: whitesmoke;
+    }
+}
+
+@mixin media-query($vista) {
+
+    @if $vista == desktop{
+        @media only screen and (max-width: 1200px){
+            body{
+                /*background-image: linear-gradient(to bottom, black, rgb(143, 83, 211));*/
+                grid-template-rows: .3fr 2fr 2fr .5fr;
+                grid-template-columns: 1fr repeat(3, .9fr);
+                grid-template-areas: "header header header header" /*EL PUNTO HACE ESPACIO VACIO*/
+                                    "nav main main main"
+                                    "nav main main main"
+                                    "footer footer footer footer";
+            }
+            
+            .milesSilva iframe{
+                width: 490px;
+                height: 300px;
+                left: 10%;
+            }
+        
+            .filipeMota iframe{
+                width: 490px;
+                height: 300px;
+                left: 10%;
+            }
+        
+            .sanFernando img{
+                left: 10%;
+            }
+        
+            .villaAdelina img{
+                left: 10%;
+            }
+        
+        }
+    }
+
+    @else if $vista == tablet{
+        @media only screen and (max-width: 768px){
+            body{
+                /*background-image: linear-gradient(to bottom, black, rgb(83, 211, 115));*/
+            }
+        
+            #mainShop nav{
+                top: 5px;
+            }
+        
+            .milesSilva iframe{
+                width: 330px;
+                height: 200px;
+                left: 10%;
+            }
+        
+            .filipeMota iframe{
+                width: 330px;
+                height: 200px;
+                left: 10%;
+            }
+        
+            .sanFernando img{
+                width: 400px;
+                height: 250px;
+                left: 10%;
+            }
+        
+            .villaAdelina img{
+                width: 400px;
+                height: 250px;
+                left: 10%;
+            }
+        }
+    }
+    @else if $vista == mobile{
+        @media only screen and (max-width: 468px){
+            body{
+                /*background-image: linear-gradient(to bottom, black, rgb(211, 83, 183));*/
+                grid-template-rows: .2fr .3fr 1fr .2fr;
+                grid-template-columns: .5fr repeat(2, 1fr);
+                grid-template-areas: "header header header" /*EL PUNTO HACE ESPACIO VACIO*/
+                                     "nav nav nav"
+                                     "main main main"
+                                     "footer footer footer";
+                grid-column-gap: 1em;
+            }
+        
+            header div audio{
+                display: none;
+            }
+            
+            
+            #menuPrincipal ul{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        
+            #menuPrincipal li{
+                list-style: none;
+                margin-bottom: 30px;
+            }
+        
+            .milesSilva iframe{
+                width: 250px;
+                height: 150px;
+                left: 10%;
+            }
+        
+            .filipeMota iframe{
+                width: 250px;
+                height: 150px;
+                left: 10%;
+            }
+        
+            .sanFernando img{
+                width: 300px;
+                height: 180px;
+                left: 2%;
+            }
+        
+            .villaAdelina img{
+                width: 300px;
+                height: 180px;
+                left: 2%;
+            }
+        }
+    }
+}

@@ -1,15 +1,11 @@
 #mainShop{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
+    @include flexbox(row, space-evenly, center, row wrap);
     position: relative;
-    top: 10px;
+    top: 5px;
     nav{
         height: 220px;
         width: 280px;
         position: relative;
-        top: 50px;
         a{
             position: absolute;
             width: 90%;
