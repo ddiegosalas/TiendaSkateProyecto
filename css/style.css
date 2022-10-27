@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 @import "./_variables.scss"
 @import "./each";
@@ -10,45 +9,23 @@
           box-sizing: border-box;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 body {
   width: 100vw;
   height: 100vh;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(rgb(59, 59, 52)), to(black));
-  background-image: linear-gradient(to bottom, black, rgb(59, 59, 52), black);
+  margin: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.767)), color-stop(rgba(0, 0, 0, 0.11)), to(rgba(0, 0, 0, 0.89))), url(../assets/Imagenes/FondoPage.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.767), rgba(0, 0, 0, 0.11), rgba(0, 0, 0, 0.89)), url(../assets/Imagenes/FondoPage.jpg);
+  background-size: cover;
   overflow: scroll;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 0.3fr 0.5em 1.5fr 0.5em 1.5fr 0.5em 0.3fr;
-  grid-template-rows: 0.3fr 1.5fr 1.5fr 0.3fr;
-  -ms-grid-columns: 0.5fr 1em 1fr 1em 1fr 1em 1fr;
-  grid-template-columns: 0.5fr repeat(3, 1fr);
-      grid-template-areas: "header header header header" "nav main main main" "nav main main main" "footer footer footer footer";
-  grid-column-gap: 1em;
-  grid-row-gap: 0.5em;
-}
-
-#segundoBody {
-  width: 100vw;
-  height: 100vh;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(rgb(59, 59, 52)), to(black));
-  background-image: linear-gradient(to bottom, black, rgb(59, 59, 52), black);
-  overflow: scroll;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 0.3fr 0.5em 0.5fr 0.5em 2fr 0.5em 0.3fr;
-  grid-template-rows: 0.3fr 0.5fr 2fr 0.3fr;
-  -ms-grid-columns: 0.5fr 1em 1fr 1em 1fr 1em 1fr;
+  -ms-grid-rows: 0.3fr 0.2em 1fr 0.2em 3fr 0.2em 0.3fr;
+  grid-template-rows: 0.3fr 1fr 3fr 0.3fr;
+  -ms-grid-columns: 0.5fr 0.2em 1fr 0.2em 1fr 0.2em 1fr;
   grid-template-columns: 0.5fr repeat(3, 1fr);
       grid-template-areas: "header header header header" "nav nav nav nav" "main main main main" "footer footer footer footer";
-  grid-column-gap: 1em;
-  grid-row-gap: 0.5em;
+  grid-column-gap: 0.2em;
+  grid-row-gap: 0.2em;
 }
 
 header {
@@ -71,23 +48,66 @@ header {
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
 }
-
-#segundoBody > header {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 7;
-}
 header div img {
   margin: 6px;
-  width: 70px;
-  height: 70px;
+  width: 78px;
+  height: 78px;
+}
+header div audio {
+  margin-top: 10px;
+}
+header div a {
+  text-decoration: none;
+}
+
+.ingresar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: column none;
+      flex-flow: column none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 5px;
+}
+.ingresar:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+.ingresar img {
+  width: 25px;
+  height: 25px;
+}
+.ingresar a {
+  color: white;
+  font-weight: 600;
+}
+
+#animacionLogo {
   -webkit-animation-name: animacion_logo;
           animation-name: animacion_logo;
   -webkit-animation-duration: 6s;
           animation-duration: 6s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
-  /*animation-fill-mode: forwards; (Lo deja quieto al final de la animación) */
 }
 @-webkit-keyframes animacion_logo {
   from {
@@ -101,42 +121,32 @@ header div img {
             transform: rotateY(360deg);
   }
 }
-header div audio {
-  margin-top: 10px;
-}
-header div a {
-  text-decoration: none;
-  color: black;
-}
 
-#ingresar {
-  background-color: rgb(218, 218, 218);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-top: 28px;
-  font-weight: bolder;
-  border: solid 3px black;
-  padding: 5px;
-}
-#ingresar:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  -webkit-transition: -webkit-transform 2s;
-  transition: -webkit-transform 2s;
-  transition: transform 2s;
-  transition: transform 2s, -webkit-transform 2s;
-}
-
-main {
+.navPrincipal {
   -ms-grid-row: 3;
-  -ms-grid-row-span: 3;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 5;
-  grid-area: main;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  height: 7vh;
+  grid-area: nav;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0.089)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.089));
+}
+.navPrincipal ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -153,185 +163,108 @@ main {
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
   position: relative;
-  top: 20px;
+  right: 10px;
 }
-
-#segundoBody > main {
-  -ms-grid-row: 5;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 7;
-}
-main nav {
-  width: 90%;
-  position: relative;
-  left: 1px;
+.navPrincipal ul li {
   list-style-type: none;
+  margin-right: 10px;
 }
-main nav a {
-  text-decoration: none;
-  position: absolute;
-  width: 90%;
-  height: 85px;
-  color: black;
-  left: 48px;
-  top: 10px;
-  font-weight: bolder;
-  font-size: 20px;
-}
-
-#skateshop {
-  background-image: url(../assets/Imagenes/Shop.jpg);
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  border: 2px solid rgb(0, 0, 0);
-  height: 110px;
-}
-
-#team {
-  background-image: url(../assets/Imagenes/Team.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 2px solid rgb(0, 0, 0);
-  height: 110px;
-}
-
-#eventos {
-  background-image: url(../assets/Imagenes/Eventos.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 2px solid rgb(0, 0, 0);
-  height: 110px;
-}
-
-#contacto {
-  background-image: url(../assets/Imagenes/contacto.jpg);
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  border: 2px solid rgb(0, 0, 0);
-  height: 110px;
-}
-
-#menuPrincipal {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 3;
-  -ms-grid-column: 1;
-  grid-area: nav;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-flow: column wrap;
-      flex-flow: column wrap;
-}
-
-#segundoBody > #menuPrincipal {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 7;
-}
-#menuPrincipal ul li {
-  margin-bottom: 45px;
-  list-style-type: none;
-}
-#menuPrincipal ul li:hover {
-  -webkit-transform: translateX(10px) scale(1.1);
-          transform: translateX(10px) scale(1.1);
-  -webkit-transition: -webkit-transform 2s;
-  transition: -webkit-transform 2s;
-  transition: transform 2s;
-  transition: transform 2s, -webkit-transform 2s;
-}
-#menuPrincipal ul li a {
-  text-decoration: none;
-  font-size: 23px;
-  font-weight: bold;
-  margin: 5px;
-  padding: 8px;
-  border: solid black;
-  background-color: rgb(218, 218, 218);
-  color: black;
-}
-
-#menuPrincipalDos {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 3;
-  -ms-grid-column: 1;
-  grid-area: nav;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
-}
-
-#segundoBody > #menuPrincipalDos {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 7;
-}
-#menuPrincipalDos ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
-}
-#menuPrincipalDos ul li {
-  list-style-type: none;
-  margin-right: 20px;
-}
-#menuPrincipalDos ul li:hover {
-  -webkit-transform: translateY(10px) translateX(10px) scale(1.1);
-          transform: translateY(10px) translateX(10px) scale(1.1);
-  -webkit-transition: -webkit-transform 2s;
-  transition: -webkit-transform 2s;
-  transition: transform 2s;
-  transition: transform 2s, -webkit-transform 2s;
-}
-#menuPrincipalDos ul li a {
+.navPrincipal ul li a {
   text-decoration: none;
   font-size: 22px;
   font-weight: bold;
   margin: 5px;
   padding: 4px;
-  border: solid black;
-  background-color: rgb(218, 218, 218);
-  color: black;
+  color: white;
+}
+.navPrincipal ul li a:hover {
+  color: rgb(255, 255, 152);
+}
+
+.animacionNav:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform 1.3s;
+  transition: -webkit-transform 1.3s;
+  transition: transform 1.3s;
+  transition: transform 1.3s, -webkit-transform 1.3s;
+}
+
+.mainPrincipal {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: main;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  padding: 10px;
+  width: 98vw;
+}
+.mainPrincipal section {
+  text-align: center;
+  background-color: rgba(31, 31, 31, 0.575);
+  width: 80%;
+  height: 50vh;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 39px;
+}
+.mainPrincipal section h2 {
+  font-style: italic;
+  font-weight: 500;
+  color: antiquewhite;
+}
+.mainPrincipal section div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  height: 90%;
+  padding: 5px;
+  margin: 10px;
+}
+
+.sale div div {
+  width: 23%;
+  height: 90%;
+}
+.sale div div img {
+  width: 95%;
+  height: 95%;
+}
+
+.ultimoVideo div iframe {
+  width: 50%;
+  height: 98%;
+}
+
+.ultimaNoticia div img {
+  width: 45%;
+  height: 95%;
 }
 
 footer {
@@ -342,10 +275,10 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
@@ -353,98 +286,53 @@ footer {
           align-items: center;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
+  height: 14vh;
 }
-
-#segundoBody > footer {
-  -ms-grid-row: 7;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 7;
-}
-footer div img {
-  width: 60px;
-  height: 60px;
-  margin: 10px;
+footer div {
+  width: 10%;
+  height: 95%;
+  border-radius: 12px;
+  background-image: linear-gradient(5deg, rgba(0, 0, 0, 0.151), rgba(2, 2, 2, 0.158)), url(../assets/Imagenes/PrimitiveFooter.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 footer nav {
-  margin: 10px;
+  margin: 5px;
+}
+footer nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
 }
 footer nav ul li {
   list-style-type: none;
   color: whitesmoke;
+  font-size: 1.2rem;
 }
-footer nav ul a {
+footer nav ul li a {
   text-decoration: none;
   color: whitesmoke;
+  padding-right: 15px;
+}
+footer nav ul li a img {
+  height: 40px;
+  width: 40px;
 }
 
-#mainShop {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
-  position: relative;
-  top: 5px;
-}
-#mainShop nav {
-  height: 220px;
-  width: 280px;
-  position: relative;
-}
-#mainShop nav a {
-  position: absolute;
-  width: 90%;
-  height: 90%;
-  color: black;
-  left: 20px;
-  top: 10px;
-  font-weight: bolder;
-  font-size: 20px;
-}
-
-#mainSkate {
-  background-image: url(../assets/Imagenes/skate.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 2px solid rgb(0, 0, 0);
-}
-
-#mainRemeras {
-  background-image: url(../assets/Imagenes/remeras.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 2px solid rgb(0, 0, 0);
-}
-
-#mainBuzos {
-  background-image: url(../assets/Imagenes/buzos.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 2px solid rgb(0, 0, 0);
-}
-
-#mainAccesorios {
-  background-image: url(../assets/Imagenes/accesorios.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 2px solid rgb(0, 0, 0);
-}
-
-#mainTeam {
+.mainShop {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -460,104 +348,11 @@ footer nav ul a {
           align-items: center;
   -ms-flex-flow: column wrap;
       flex-flow: column wrap;
-  position: relative;
-  top: 30px;
-}
-#mainTeam nav {
-  width: 70%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 5px;
-}
-#mainTeam nav ul li {
-  list-style-type: circle;
-  color: rgb(194, 194, 194);
-  padding: 3px;
-}
-#mainTeam nav ul li a {
-  text-decoration: none;
-  font-size: 25px;
-  color: whitesmoke;
-}
-#mainTeam div {
-  width: 95%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 50px;
-}
-
-.filipeMota img {
-  height: 180px;
-  width: 200px;
   padding: 10px;
-  position: relative;
-  left: 40%;
+  width: 98vw;
 }
-.filipeMota h2 {
-  color: lightgray;
-  width: 80%;
-  padding: 10px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  text-align: center;
-  font-size: 35px;
-  font-weight: bolder;
-  position: relative;
-  top: 15px;
-  left: 10%;
-}
-.filipeMota p {
-  padding: 30px;
-  position: relative;
-  left: 10%;
-  width: 80%;
-  font-size: 20px;
-  color: whitesmoke;
-}
-.filipeMota iframe {
-  position: relative;
-  padding: 5px;
-  left: 25%;
-}
-
-.milesSilva img {
-  height: 180px;
-  width: 200px;
-  padding: 10px;
-  position: relative;
-  left: 40%;
-}
-.milesSilva h2 {
-  color: lightgray;
-  width: 80%;
-  padding: 10px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  text-align: center;
-  font-size: 35px;
-  font-weight: bolder;
-  position: relative;
-  left: 10%;
-}
-.milesSilva p {
-  padding: 30px;
-  position: relative;
-  left: 10%;
-  width: 80%;
-  font-size: 20px;
-  color: whitesmoke;
-}
-.milesSilva iframe {
-  padding: 5px;
-  position: relative;
-  left: 25%;
-}
-
-#mainEventos {
+.mainShop section {
+  background-color: rgba(31, 31, 31, 0.575);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -573,93 +368,33 @@ footer nav ul a {
           align-items: center;
   -ms-flex-flow: column wrap;
       flex-flow: column wrap;
-  position: relative;
-  top: 5px;
+  width: 82vw;
+  height: 60vh;
+  margin-bottom: 10px;
+  border-radius: 90px;
 }
-#mainEventos nav {
-  width: 70%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+.mainShop section div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  text-align: center;
   padding: 10px;
-}
-#mainEventos nav ul li {
-  list-style-type: circle;
-  color: rgb(194, 194, 194);
-  padding: 3px;
-}
-#mainEventos nav ul li a {
-  text-decoration: none;
-  font-size: 25px;
-  color: whitesmoke;
-}
-#mainEventos div {
   width: 95%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 50px;
+  height: 60%;
 }
-
-.villaAdelina img {
-  height: 300px;
-  width: 450px;
-  padding: 10px;
-  position: relative;
-  left: 30%;
-}
-.villaAdelina h2 {
-  color: lightgray;
-  width: 80%;
-  padding: 10px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  text-align: center;
-  font-size: 35px;
-  font-weight: bolder;
-  position: relative;
-  left: 10%;
-}
-.villaAdelina p {
-  padding: 20px;
-  position: relative;
-  left: 10%;
-  width: 80%;
-  font-size: 20px;
-  color: whitesmoke;
-}
-
-.sanFernando img {
-  height: 300px;
-  width: 450px;
-  padding: 10px;
-  position: relative;
-  left: 30%;
-}
-.sanFernando h2 {
-  color: lightgray;
-  width: 80%;
-  padding: 10px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  text-align: center;
-  font-size: 35px;
-  font-weight: bolder;
-  position: relative;
-  left: 10%;
-}
-.sanFernando p {
-  padding: 20px;
-  position: relative;
-  left: 10%;
-  width: 80%;
-  font-size: 20px;
-  color: whitesmoke;
-}
-
-#mainContacto {
+.mainShop section div a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -667,17 +402,227 @@ footer nav ul a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
+  width: 23%;
+  height: 95%;
   position: relative;
-  top: 5px;
+  bottom: 15px;
 }
-#mainContacto div {
+
+#estiloTitulo {
+  height: 15%;
+  font-style: italic;
+  font-weight: 400;
+  color: antiquewhite;
+}
+
+#aSkate {
+  width: 80%;
+}
+
+.mainTeam {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  padding: 10px;
+  width: 98vw;
+}
+.mainTeam div {
+  padding: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 6px;
+}
+.mainTeam div nav ul li {
+  list-style: none;
+  border-style: solid;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  border-color: rgba(245, 245, 220, 0.459);
+}
+.mainTeam div nav ul li a {
+  text-decoration: none;
+  color: beige;
+  font-weight: 600;
+  font-size: 22px;
+}
+.mainTeam section {
+  background-color: rgba(31, 31, 31, 0.575);
+  height: 95vh;
+  width: 89%;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  text-align: center;
+  margin: 8px;
+  border-radius: 120px;
+}
+.mainTeam section div {
+  width: 95%;
+  height: 40%;
+}
+.mainTeam section div h2 {
+  font-style: inherit;
+  font-weight: 800;
+  color: rgb(255, 174, 174);
+  font-size: 35px;
+}
+.mainTeam section div p {
+  color: beige;
+}
+
+.mainEventos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  padding: 10px;
+  width: 98vw;
+}
+.mainEventos div {
+  text-align: center;
+  padding: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 8px;
+}
+.mainEventos div nav ul li {
+  list-style: none;
+  border-style: solid;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  border-color: rgba(245, 245, 220, 0.459);
+}
+.mainEventos div nav ul li a {
+  text-decoration: none;
+  color: beige;
+  font-weight: 600;
+  font-size: 22px;
+}
+.mainEventos section {
+  background-color: rgba(31, 31, 31, 0.575);
+  height: 90vh;
+  width: 80%;
+  padding: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  text-align: center;
+  margin: 10px;
+  border-radius: 120px;
+}
+.mainEventos section div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  width: 95%;
+  height: 45%;
+}
+.mainEventos section div h2 {
+  font-style: inherit;
+  font-weight: 800;
+  color: beige;
+  font-size: 50px;
+}
+.mainEventos section div p {
+  color: beige;
+}
+
+#villaAdelina {
+  background-image: url(../assets/Imagenes/skatepark.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  width: 700px;
+}
+
+#sanFernando {
+  background-image: url(../assets/Imagenes/sanFernando.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  width: 700px;
+}
+
+.mainContacto {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -685,23 +630,50 @@ footer nav ul a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
+  padding: 10px;
+  width: 98vw;
+}
+.mainContacto div {
+  background-color: rgba(245, 245, 220, 0.068);
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  text-align: center;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: 80vw;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 30px;
+}
+.mainContacto div form fieldset legend {
   padding: 20px;
 }
-#mainContacto div form fieldset legend {
-  padding: 20px;
-}
-#mainContacto div form fieldset div {
+.mainContacto div form fieldset div {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -713,190 +685,98 @@ footer nav ul a {
 
 .estiloSecciones, .estiloSecciones--modificado {
   color: aliceblue;
-  font-size: 26px;
-  padding: 6px;
-  position: relative;
-  left: 5px;
+  font-size: 20px;
+  padding: 10px;
 }
 
 .estiloSecciones--modificado {
-  font-size: 30px;
+  font-size: 25px;
 }
 
-@media only screen and (max-width: 1200px) {
-  body {
-    /*background-image: linear-gradient(to bottom, black, rgb(143, 83, 211));*/
-    -ms-grid-rows: 0.3fr 2fr 2fr 0.5fr;
-    grid-template-rows: 0.3fr 2fr 2fr 0.5fr;
-    -ms-grid-columns: 1fr (0.9fr)[3];
-    grid-template-columns: 1fr repeat(3, 0.9fr);
-        grid-template-areas: "header header header header" "nav main main main" "nav main main main" "footer footer footer footer";
-  }
-
-  .milesSilva iframe {
-    width: 490px;
-    height: 300px;
-    left: 10%;
-  }
-
-  .filipeMota iframe {
-    width: 490px;
-    height: 300px;
-    left: 10%;
-  }
-
-  .sanFernando img {
-    left: 10%;
-  }
-
-  .villaAdelina img {
-    left: 10%;
-  }
-  header {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 4;
-  }
-  main {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 2;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 3;
-  }
-  #menuPrincipal {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 2;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-  }
-  #menuPrincipalDos {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 2;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-  }
-  footer {
-    -ms-grid-row: 4;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 4;
-  }
-}
 @media only screen and (max-width: 768px) {
-  body {
-    /*background-image: linear-gradient(to bottom, black, rgb(83, 211, 115));*/
+  .navPrincipal {
+    height: 4vh;
   }
 
-  #mainShop nav {
-    top: 5px;
+  .mainPrincipal section {
+    height: 22vh;
   }
 
-  .milesSilva iframe {
-    width: 330px;
+  footer {
+    height: 5vh;
+  }
+
+  .mainTeam section {
+    height: 50vh;
+  }
+
+  .mainShop section {
+    height: 30vh;
+  }
+  .mainShop section div a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-flow: column wrap;
+        flex-flow: column wrap;
+    width: 50%;
+    height: 50%;
+  }
+
+  .mainEventos section {
+    height: 50vh;
+  }
+
+  #villaAdelina {
     height: 200px;
-    left: 10%;
+    width: 550px;
   }
 
-  .filipeMota iframe {
-    width: 330px;
+  #sanFernando {
     height: 200px;
-    left: 10%;
-  }
-
-  .sanFernando img {
-    width: 400px;
-    height: 250px;
-    left: 10%;
-  }
-
-  .villaAdelina img {
-    width: 400px;
-    height: 250px;
-    left: 10%;
+    width: 550px;
   }
 }
 @media only screen and (max-width: 468px) {
-  body {
-    /*background-image: linear-gradient(to bottom, black, rgb(211, 83, 183));*/
-    -ms-grid-rows: 0.2fr 0.3fr 1fr 0.2fr;
-    grid-template-rows: 0.2fr 0.3fr 1fr 0.2fr;
-    -ms-grid-columns: 0.5fr 1em 1fr 1em 1fr;
-    grid-template-columns: 0.5fr repeat(2, 1fr);
-        grid-template-areas: "header header header" "nav nav nav" "main main main" "footer footer footer";
-    grid-column-gap: 1em;
-  }
-
   header div audio {
     display: none;
   }
 
-  #menuPrincipal ul {
+  .mainEventos section div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
   }
 
-  #menuPrincipal li {
-    list-style: none;
-    margin-bottom: 30px;
-  }
-
-  .milesSilva iframe {
-    width: 250px;
-    height: 150px;
-    left: 10%;
-  }
-
-  .filipeMota iframe {
-    width: 250px;
-    height: 150px;
-    left: 10%;
-  }
-
-  .sanFernando img {
+  #villaAdelina {
+    height: 200px;
     width: 300px;
-    height: 180px;
-    left: 2%;
   }
 
-  .villaAdelina img {
+  #sanFernando {
+    height: 200px;
     width: 300px;
-    height: 180px;
-    left: 2%;
-  }
-  header {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 5;
-  }
-  main {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 5;
-  }
-  #menuPrincipal {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 5;
-  }
-  #menuPrincipalDos {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 5;
-  }
-  footer {
-    -ms-grid-row: 4;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 5;
   }
 }

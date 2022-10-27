@@ -8,75 +8,85 @@
     <meta name="keywords" content="skate, skateshop, primitive, team, eventos, skateboarding, info, skatepark">
     <meta name="robots" content="index, follow">
     <meta name="author" content="primitive">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="./assets/Imagenes/LogoPagina.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../assets/Imagenes/LogoPagina.png">
     <title>Eventos Primitive</title>
 </head>
 
-<body id="segundoBody">
+<body>
 
     <header>
         <div>
-            <img src="../assets/Imagenes/LogoPrimitive.png" alt="LOGO">
+            <img src="../assets/Imagenes/LogoPrimitive.png" alt="LOGO" id="animacionLogo">
         </div>
         <div>
             <audio src="../assets/Audio/Musica.wav" controls loop></audio>
         </div>
-        <div id="ingresar">
-            <a href="#">INGRESAR</a>
+        <div class="ingresar">
+            <img src="../assets/Imagenes/log-in.svg" alt="">
+            <a href="#">Log in</a>
         </div>
     </header>
 
-    <main id="mainEventos">
-        <nav>
-            <ul>
-                <li><a href="#VA">SKATEPARK ZONA NORTE</a></li>
-                <li><a href="#SF">GAME OF SKATE</a></li>
-            </ul>
-        </nav>
-
-        <div class="villaAdelina" id="VA">
-            <img src="../assets/Imagenes/skatepark.jpg" alt="VA">
-            <h2 class="tituloVA">Skatepark de Villa Adelina</h2>
-            <p> What is Lorem Ipsum?
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap 
-                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum 
-                passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-        </div>
-
-        <div class="sanFernando" id="SF">
-            <img src="../assets/Imagenes/sanFernando.jpg" alt="SF">
-            <h2 class="tituloSF">Game of S.K.A.T.E San Fernando</h2>
-            <p> What is Lorem Ipsum?
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap 
-                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum 
-                passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-        </div>
-    </main>
-
-    <nav id="menuPrincipalDos">
+    <nav class="navPrincipal">
         <ul>
-            <li class="movimiento"><a href="../pages/shop.html">SHOP</a></li>
-            <li class="movimiento"><a href="../pages/team.html">TEAM</a></li>
-            <li class="movimiento"><a href="../pages/eventos.html">EVENTOS</a></li>
-            <li class="movimiento"><a href="../pages/contacto.html">CONTACTO</a></li>
-            <li class="movimiento"><a href="../index.html">INICIO</a></li>
+            <li class="animacionNav"><a href="../index.html">INICIO</a></li>
+            <li class="animacionNav"><a href="./shop.html">SHOP</a></li>
+            <li class="animacionNav"><a href="./team.html">TEAM</a></li>
+            <li class="animacionNav"><a href="./contacto.html">CONTACTO</a></li>
         </ul>
     </nav>
 
-    <footer id="estiloFooter">  
+    <main class="mainEventos">
         <div>
-            <img src="../assets/Imagenes/LogoPrimitive.png" alt="LOGO">
+            <nav>
+                <ul>
+                    <li><a href="#VA">SKATEPARK VILLA ADELINA</a></li>
+                    <li><a href="#SF">GAME OF S.K.A.T.E</a></li>
+                </ul>
+            </nav>
         </div>
+
+        <section id="VA">
+            <div>
+                <h2>Skate park Villa Adelina</h2>
+                <p> What is Lorem Ipsum?
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap 
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum 
+                    passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </div>
+                
+            <div id="villaAdelina">
+                
+            </div>
+        </section>
+
+        <section id="SF">
+            <div>
+                <h2>Game of S.K.A.T.E</h2>
+                <p> What is Lorem Ipsum?
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap 
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum 
+                    passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </div>
+
+            <div id="sanFernando">
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>  
+        <div></div>
         <nav>
             <ul>
-                <li><a href="https://www.instagram.com/primitiveskate/">Instagram</a></li>
-                <li><a href="https://www.youtube.com/c/Primitiveskateboarding">Youtube</a></li>
-                <li><a href="#">Ubicación</a></li>
+                <li><a href="https://www.instagram.com/primitiveskate/" target="_blank"><img src="../assets/Imagenes/instagram.svg" alt=""></a></li>
+                <li><a href="https://www.youtube.com/c/Primitiveskateboarding" target="_blank"><img src="../assets/Imagenes/youtube.svg" alt=""></a></li>
+                <li><a href="#"><img src="../assets/Imagenes/map-pin.svg" alt=""></a></li>
                 <li>primitive@gmail.com</li>
             </ul>
         </nav>

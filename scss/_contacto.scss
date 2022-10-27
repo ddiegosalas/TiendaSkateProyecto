@@ -1,12 +1,17 @@
-#mainContacto{
-    @include flexbox(row, space-around, center, row wrap);
-    position: relative;
-    top: 5px;
+.mainContacto{
+    @include flexbox(row, space-evenly, center, row wrap);
+    padding: 10px;
+    width: 98vw;
     div{
-        @include flexbox(row, space-around, center, row wrap);
+        background-color: rgba(245, 245, 220, 0.068);
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        @include flexbox(row, space-evenly, center, column wrap);
+        text-align: center;
         height: fit-content;
-        width: 80vw;
-        padding: 20px;
+        width: fit-content;
+        padding: 30px;
         form{
             fieldset{
                 legend{
@@ -24,13 +29,11 @@
 
 .estiloSecciones {
     color: aliceblue;
-    font-size: 26px;
-    padding: 6px;
-    position: relative;
-    left: 5px;
+    font-size: 20px;
+    padding: 10px;
 }
 
 .estiloSecciones--modificado {
     @extend .estiloSecciones;
-    font-size: 30px;
+    font-size: 25px;
 }

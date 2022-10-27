@@ -1,97 +1,54 @@
-#mainTeam{
+.mainTeam{
     @include flexbox(column, space-evenly, center, column wrap);
-    position: relative;
-    top: 30px;
-    nav{
-        width: 70%;
+    padding: 10px;
+    width: 98vw;
+
+    div{
+        padding: 10px;
         height: fit-content;
-        padding: 5px;
-        ul{
-            li{
-                list-style-type: circle;
-                color: rgb(194, 194, 194);
-                padding: 3px;
-                a{
-                    text-decoration: none;
-                    font-size: 25px;
-                    color: whitesmoke;
+        width: fit-content;
+        margin: 6px;
+        nav{
+            ul{
+                li{
+                    list-style: none;
+                    border-style: solid;
+                    margin: 5px;
+                    padding: 5px;
+                    border-radius: 10px;
+                    border-color: rgba(245, 245, 220, 0.459);
+                    a{
+                        text-decoration: none;
+                        color: beige;
+                        font-weight: 600;
+                        font-size: 22px;
+                    }
                 }
             }
         }
     }
-    div{
-        width: 95%;
-        height: fit-content;
-        padding: 50px;
-    }
-}
-
-.filipeMota {
-    img{
-        height: 180px;
-        width: 200px;
+    section{
+        background-color: rgba(31, 31, 31, 0.575);
+        height: 95vh;
+        width: 89%;
         padding: 10px;
-        position: relative;
-        left: 40%;
-    }
-    h2{
-        color: lightgray;
-        width: 80%;
-        padding: 10px;
-        height: fit-content;
+        @include flexbox(column, space-evenly, center, column wrap);
         text-align: center;
-        font-size: 35px;
-        font-weight: bolder;
-        position: relative;
-        top: 15px;
-        left: 10%;
-    }
-    p{
-        padding: 30px;
-        position: relative;
-        left: 10%;
-        width: 80%;
-        font-size: 20px;
-        color: whitesmoke; 
-    }
-    iframe{
-        position: relative;
-        padding: 5px;
-        left: 25%; 
-    }
-}
-
-
-.milesSilva {
-    img{
-        height: 180px;
-        width: 200px;
-        padding: 10px;
-        position: relative;
-        left: 40%;
-    }
-    h2{
-        color: lightgray;
-        width: 80%;
-        padding: 10px;
-        height: fit-content;
-        text-align: center;
-        font-size: 35px;
-        font-weight: bolder;
-        position: relative;
-        left: 10%; 
-    }
-    p{
-        padding: 30px;
-        position: relative;
-        left: 10%;
-        width: 80%;
-        font-size: 20px;
-        color: whitesmoke;
-    }
-    iframe{
-        padding: 5px;
-        position: relative;
-        left: 25%;
+        margin: 8px;
+        border-radius: 120px;
+        div{
+            width: 95%;
+            height: 40%;
+            
+            h2{
+                font-style:inherit;
+                font-weight: 800;
+                color: rgb(255, 174, 174);
+                font-size: 35px;
+            }
+            p{
+                color: beige;
+            }
+        }
     }
 }

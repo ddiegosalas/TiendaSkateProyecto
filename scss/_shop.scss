@@ -1,52 +1,38 @@
-#mainShop{
-    @include flexbox(row, space-evenly, center, row wrap);
-    position: relative;
-    top: 5px;
-    nav{
-        height: 220px;
-        width: 280px;
-        position: relative;
-        a{
-            position: absolute;
-            width: 90%;
-            height: 90%;
-            color: black;
-            left: 20px;
-            top: 10px;
-            font-weight: bolder;
-            font-size: 20px;
+.mainShop{
+    @include flexbox(column, space-evenly, center, column wrap);
+    padding: 10px;
+    width: 98vw;
+    section{
+        background-color: rgba(31, 31, 31, 0.575);
+        @include flexbox(column, space-evenly, center, column wrap);
+        width: 82vw;
+        height: 60vh;
+        margin-bottom: 10px;
+        border-radius: 90px;
+        div{
+            @include flexbox(column, space-evenly, center, column wrap);
+            text-align: center;
+            padding: 10px;
+            width: 95%;
+            height: 60%;
+            a{
+                @include flexbox(row, space-evenly, center, row wrap);
+                width: 23%;
+                height: 95%; 
+                position: relative;
+                bottom: 15px;
+            }
         }
     }
 }
 
-#mainSkate{
-    background-image: url(../assets/Imagenes/skate.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 2px solid rgb(0, 0, 0);
+#estiloTitulo{
+    height: 15%;
+    font-style: italic;
+    font-weight: 400;
+    color: antiquewhite;
 }
 
-#mainRemeras{
-    background-image: url(../assets/Imagenes/remeras.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 2px solid rgb(0, 0, 0);
-}
-
-#mainBuzos{
-    background-image: url(../assets/Imagenes/buzos.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 2px solid rgb(0, 0, 0);
-}
-
-#mainAccesorios{
-    background-image: url(../assets/Imagenes/accesorios.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 2px solid rgb(0, 0, 0);
+#aSkate{
+    width: 80%;
 }
